@@ -1,4 +1,4 @@
 # ultracite
 #!/bin/sh
-bun x lint-staged
+lint-staged
 tsc
