@@ -18,6 +18,7 @@ function App() {
 							onClick={() =>
 								toast.message("Hey 👋", {
 									description: "Welcome to Tanstack SPA Starter",
+									position: "top-center",
 								})
 							}
 							size="lg"
