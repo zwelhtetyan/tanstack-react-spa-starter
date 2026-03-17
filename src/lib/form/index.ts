@@ -5,7 +5,7 @@ import { fieldContext, formContext } from "@/contexts/form-context";
 
 const TextField = lazy(() => import("@/components/common/form/text-field"));
 
-export const { useAppForm } = createFormHook({
+export const { useAppForm, withForm, withFieldGroup } = createFormHook({
 	fieldContext,
 	formContext,
 	fieldComponents: {

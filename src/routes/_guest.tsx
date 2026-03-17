@@ -8,6 +8,6 @@ export const Route = createFileRoute("/_guest")({
 
 		if (user) throw redirect({ to: "/" });
 	},
-	pendingComponent: () => <AppSpinner type="full" />,
+	pendingComponent: () => <AppSpinner type="screen" />,
 	pendingMs: 0,
 });

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_guest/(auth)")({
 
 function RouteComponent() {
 	return (
-		<div className="flex h-dvh w-dvw items-center justify-center">
+		<div className="flex h-dvh w-dvw items-center justify-center p-4">
 			<Outlet />
 		</div>
 	);

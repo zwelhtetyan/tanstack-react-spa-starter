@@ -5,7 +5,7 @@ import { useAuthActions } from "@/store/auth-store";
 import { useSignOut } from "../hooks/use-sign-out";
 
 type UserHeaderProps = {
-	user: User;
+	user: User | null;
 };
 
 export function UserHeader({ user }: UserHeaderProps) {

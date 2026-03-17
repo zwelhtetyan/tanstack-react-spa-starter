@@ -12,10 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as GuestRouteImport } from './routes/_guest'
 import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AuthedProductsRouteImport } from './routes/_authed/products'
 import { Route as GuestauthRouteRouteImport } from './routes/_guest/(auth)/route'
+import { Route as AuthedauthLayoutRouteRouteImport } from './routes/_authed/(authLayout)/route'
 import { Route as GuestauthSignUpRouteImport } from './routes/_guest/(auth)/sign-up'
 import { Route as GuestauthSignInRouteImport } from './routes/_guest/(auth)/sign-in'
+import { Route as AuthedauthLayoutProductsRouteImport } from './routes/_authed/(authLayout)/products'
+import { Route as AuthedauthLayoutHelloRouteImport } from './routes/_authed/(authLayout)/hello'
 
 const GuestRoute = GuestRouteImport.update({
   id: '/_guest',
@@ -30,14 +32,13 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthedProductsRoute = AuthedProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => AuthedRoute,
-} as any)
 const GuestauthRouteRoute = GuestauthRouteRouteImport.update({
   id: '/(auth)',
   getParentRoute: () => GuestRoute,
+} as any)
+const AuthedauthLayoutRouteRoute = AuthedauthLayoutRouteRouteImport.update({
+  id: '/(authLayout)',
+  getParentRoute: () => AuthedRoute,
 } as any)
 const GuestauthSignUpRoute = GuestauthSignUpRouteImport.update({
   id: '/sign-up',
@@ -49,16 +50,29 @@ const GuestauthSignInRoute = GuestauthSignInRouteImport.update({
   path: '/sign-in',
   getParentRoute: () => GuestauthRouteRoute,
 } as any)
+const AuthedauthLayoutProductsRoute =
+  AuthedauthLayoutProductsRouteImport.update({
+    id: '/products',
+    path: '/products',
+    getParentRoute: () => AuthedauthLayoutRouteRoute,
+  } as any)
+const AuthedauthLayoutHelloRoute = AuthedauthLayoutHelloRouteImport.update({
+  id: '/hello',
+  path: '/hello',
+  getParentRoute: () => AuthedauthLayoutRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/products': typeof AuthedProductsRoute
+  '/hello': typeof AuthedauthLayoutHelloRoute
+  '/products': typeof AuthedauthLayoutProductsRoute
   '/sign-in': typeof GuestauthSignInRoute
   '/sign-up': typeof GuestauthSignUpRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/products': typeof AuthedProductsRoute
+  '/hello': typeof AuthedauthLayoutHelloRoute
+  '/products': typeof AuthedauthLayoutProductsRoute
   '/sign-in': typeof GuestauthSignInRoute
   '/sign-up': typeof GuestauthSignUpRoute
 }
@@ -67,23 +81,27 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authed': typeof AuthedRouteWithChildren
   '/_guest': typeof GuestRouteWithChildren
+  '/_authed/(authLayout)': typeof AuthedauthLayoutRouteRouteWithChildren
   '/_guest/(auth)': typeof GuestauthRouteRouteWithChildren
-  '/_authed/products': typeof AuthedProductsRoute
+  '/_authed/(authLayout)/hello': typeof AuthedauthLayoutHelloRoute
+  '/_authed/(authLayout)/products': typeof AuthedauthLayoutProductsRoute
   '/_guest/(auth)/sign-in': typeof GuestauthSignInRoute
   '/_guest/(auth)/sign-up': typeof GuestauthSignUpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/products' | '/sign-in' | '/sign-up'
+  fullPaths: '/' | '/hello' | '/products' | '/sign-in' | '/sign-up'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/products' | '/sign-in' | '/sign-up'
+  to: '/' | '/hello' | '/products' | '/sign-in' | '/sign-up'
   id:
     | '__root__'
     | '/'
     | '/_authed'
     | '/_guest'
+    | '/_authed/(authLayout)'
     | '/_guest/(auth)'
-    | '/_authed/products'
+    | '/_authed/(authLayout)/hello'
+    | '/_authed/(authLayout)/products'
     | '/_guest/(auth)/sign-in'
     | '/_guest/(auth)/sign-up'
   fileRoutesById: FileRoutesById
@@ -117,19 +135,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authed/products': {
-      id: '/_authed/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof AuthedProductsRouteImport
-      parentRoute: typeof AuthedRoute
-    }
     '/_guest/(auth)': {
       id: '/_guest/(auth)'
       path: ''
       fullPath: ''
       preLoaderRoute: typeof GuestauthRouteRouteImport
       parentRoute: typeof GuestRoute
+    }
+    '/_authed/(authLayout)': {
+      id: '/_authed/(authLayout)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthedauthLayoutRouteRouteImport
+      parentRoute: typeof AuthedRoute
     }
     '/_guest/(auth)/sign-up': {
       id: '/_guest/(auth)/sign-up'
@@ -145,15 +163,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuestauthSignInRouteImport
       parentRoute: typeof GuestauthRouteRoute
     }
+    '/_authed/(authLayout)/products': {
+      id: '/_authed/(authLayout)/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof AuthedauthLayoutProductsRouteImport
+      parentRoute: typeof AuthedauthLayoutRouteRoute
+    }
+    '/_authed/(authLayout)/hello': {
+      id: '/_authed/(authLayout)/hello'
+      path: '/hello'
+      fullPath: '/hello'
+      preLoaderRoute: typeof AuthedauthLayoutHelloRouteImport
+      parentRoute: typeof AuthedauthLayoutRouteRoute
+    }
   }
 }
 
+interface AuthedauthLayoutRouteRouteChildren {
+  AuthedauthLayoutHelloRoute: typeof AuthedauthLayoutHelloRoute
+  AuthedauthLayoutProductsRoute: typeof AuthedauthLayoutProductsRoute
+}
+
+const AuthedauthLayoutRouteRouteChildren: AuthedauthLayoutRouteRouteChildren = {
+  AuthedauthLayoutHelloRoute: AuthedauthLayoutHelloRoute,
+  AuthedauthLayoutProductsRoute: AuthedauthLayoutProductsRoute,
+}
+
+const AuthedauthLayoutRouteRouteWithChildren =
+  AuthedauthLayoutRouteRoute._addFileChildren(
+    AuthedauthLayoutRouteRouteChildren,
+  )
+
 interface AuthedRouteChildren {
-  AuthedProductsRoute: typeof AuthedProductsRoute
+  AuthedauthLayoutRouteRoute: typeof AuthedauthLayoutRouteRouteWithChildren
 }
 
 const AuthedRouteChildren: AuthedRouteChildren = {
-  AuthedProductsRoute: AuthedProductsRoute,
+  AuthedauthLayoutRouteRoute: AuthedauthLayoutRouteRouteWithChildren,
 }
 
 const AuthedRouteWithChildren =
