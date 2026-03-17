@@ -4,17 +4,13 @@ import type {
 	BeforeRequestHook,
 	BeforeRetryHook,
 } from "ky";
+import { useAuthStore } from "@/store/auth-store";
 
 export const beforeRequestHooks: BeforeRequestHook[] = [
-	(request) => {
-		// Get token from store(Zustand/Redux) or context if provided
-		// Priority: context.token > store.token
-
-		// const { token: contextToken } = options.context;
-		// const storeToken = authStore.getState().token;
-		// const token = contextToken ?? storeToken;
-
-		const token = "";
+	(request, options) => {
+		const { token: contextToken } = options.context;
+		const storeToken = useAuthStore.getState().token;
+		const token = contextToken ?? storeToken;
 
 		if (!token) return;
 
@@ -45,7 +41,12 @@ export const beforeErrorHooks: BeforeErrorHook[] = [
 ];
 
 export const AfterResponseHooks: AfterResponseHook[] = [
-	async (_request, _options, _response, _state) => {
+	(_request, _options, response, _state) => {
+		if (response.status === 401) {
+			useAuthStore.getState().actions.reset();
+		}
+
+		// ========== Refresh Token ===========
 		// if (response.status === 401 && state.retryCount === 0) {
 		// 	const newToken = await refreshToken();
 		// 	const headers = new Headers(request.headers);

@@ -1,7 +1,6 @@
-const users = {
-	all: () => ["users"] as const,
-	list: (params?: unknown) => ["users", params] as const,
-	details: <T>(userId: T) => ["users", userId] as const,
+const product = {
+	all: () => ["products"] as const,
+	detail: <T>(id: T) => [...product.all(), id] as const,
 };
 
-export const QUERY_KEY = { users };
+export const QUERY_KEY = { product };

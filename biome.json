@@ -37,6 +37,12 @@
       },
       "suspicious": {
         "noConsole": "warn"
+      },
+      "correctness": {
+        "noChildrenProp": "off"
+      },
+      "a11y": {
+        "useSemanticElements": "warn"
       }
     }
   },
