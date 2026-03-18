@@ -1,5 +1,5 @@
 import { withForm } from "@/lib/form";
-import { signupFormOpts } from "@/routes/_guest/(auth)/sign-up";
+import { signupFormOpts } from "../../lib/form-options";
 import { SigninFieldGroup } from "../field-groups/sign-in-field-group";
 
 export const SignUpFields = withForm({

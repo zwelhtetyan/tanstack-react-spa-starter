@@ -1,6 +1,5 @@
-import { formOptions } from "@tanstack/react-form";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { type SubmitEvent, Suspense, useId } from "react";
+import { Suspense } from "react";
 import z from "zod";
 import { AppSpinner } from "@/components/common/app-spinner";
 import { Button } from "@/components/ui/button";
@@ -15,10 +14,7 @@ import {
 } from "@/components/ui/card";
 import { FieldGroup } from "@/components/ui/field";
 import { SignUpFields } from "@/features/auth/components/fields/sign-up-fields";
-import { useSignUp } from "@/features/auth/hooks/use-sign-up";
-import { signUpSchema } from "@/features/auth/schema";
-import { useAppForm } from "@/lib/form";
-import { useAuthActions } from "@/store/auth-store";
+import { useSignupForm } from "@/features/auth/hooks/use-sign-up-form";
 
 export const Route = createFileRoute("/_guest/(auth)/sign-up")({
 	component: RouteComponent,
@@ -27,41 +23,14 @@ export const Route = createFileRoute("/_guest/(auth)/sign-up")({
 	}),
 });
 
-export const signupFormOpts = formOptions({
-	defaultValues: { name: "", email: "", password: "" },
-	validators: { onSubmit: signUpSchema },
-});
-
 function RouteComponent() {
-	const { redirect } = Route.useSearch();
-	const navigate = Route.useNavigate();
-
-	const { setAuthState } = useAuthActions();
-
-	const { handleSignUp } = useSignUp({
-		onComplete: (data) => {
-			setAuthState(data);
-
-			navigate({ to: redirect ?? "/" });
-		},
-	});
-
-	const formId = useId();
-	const form = useAppForm({
-		...signupFormOpts,
-		onSubmit: ({ value }) => handleSignUp(value),
-	});
-
-	const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		form.handleSubmit();
-	};
+	const { form, formId, handleSubmit, goToSignin } = useSignupForm();
 
 	return (
 		<Suspense fallback={<AppSpinner />}>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
-				<Link to="/">
-					<img alt="logo" height={60} src="/logo.png" width={60} />
+				<Link className="rounded-full bg-foreground p-0.5" to="/">
+					<img alt="logo" height={50} src="/logo.png" width={50} />
 				</Link>
 
 				<Card className="w-full sm:max-w-sm">
@@ -72,11 +41,7 @@ function RouteComponent() {
 						</CardDescription>
 
 						<CardAction>
-							<Button
-								nativeButton={false}
-								render={<Link search={{ redirect }} to="/sign-in" />}
-								variant="link"
-							>
+							<Button onClick={goToSignin} variant="link">
 								Sign in
 							</Button>
 						</CardAction>
