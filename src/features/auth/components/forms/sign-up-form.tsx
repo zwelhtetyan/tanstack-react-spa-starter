@@ -1,4 +1,4 @@
-import type { SubmitEvent } from "react";
+import { type SubmitEvent, useId } from "react";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { useAppForm } from "@/lib/form";
 import type { CommonFormProps } from "@/types/form";
@@ -9,6 +9,7 @@ const defaultValues: SignUpData = { name: "", email: "", password: "" };
 type SignUpFormProps = CommonFormProps<SignUpData>;
 
 export function SignUpForm(props: SignUpFormProps) {
+	const formId = useId();
 	const form = useAppForm({
 		validators: { onSubmit: signUpSchema },
 		defaultValues,
@@ -21,7 +22,7 @@ export function SignUpForm(props: SignUpFormProps) {
 	};
 
 	return (
-		<form id="sign-up-form" onSubmit={handleSubmit}>
+		<form id={formId} onSubmit={handleSubmit}>
 			<FieldGroup>
 				<form.AppField name="name">
 					{(field) => (
@@ -57,11 +58,7 @@ export function SignUpForm(props: SignUpFormProps) {
 
 				<form.AppForm>
 					<Field className="justify-end" orientation="horizontal">
-						<form.SubscribeButton
-							form="sign-up-form"
-							label="Sign up"
-							type="submit"
-						/>
+						<form.SubscribeButton form={formId} label="Sign up" type="submit" />
 					</Field>
 				</form.AppForm>
 			</FieldGroup>
