@@ -22,7 +22,7 @@ const products = [
 		description:
 			"Classic running shoes with visible Air cushioning for ultimate comfort and style",
 		category: "men's shoes",
-		image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+		image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
 		rating: { rate: 4.5, count: 120 },
 	},
 	{
@@ -41,7 +41,7 @@ const products = [
 		price: 59.99,
 		description: "Iconic canvas sneakers perfect for everyday casual wear",
 		category: "casual",
-		image: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=500",
+		image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
 		rating: { rate: 4.3, count: 210 },
 	},
 	{
@@ -50,7 +50,7 @@ const products = [
 		price: 169.99,
 		description: "Legendary basketball shoes with premium leather upper",
 		category: "men's shoes",
-		image: "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=500",
+		image: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500",
 		rating: { rate: 4.8, count: 95 },
 	},
 	{
@@ -59,7 +59,7 @@ const products = [
 		price: 89.99,
 		description: "Comfortable casual shoes with ENCAP midsole cushioning",
 		category: "casual",
-		image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500",
+		image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500",
 		rating: { rate: 4.4, count: 150 },
 	},
 	{
@@ -68,7 +68,7 @@ const products = [
 		price: 109.99,
 		description: "Bold running shoes with chunky design and comfortable fit",
 		category: "athletic",
-		image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+		image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
 		rating: { rate: 4.2, count: 75 },
 	},
 	{
@@ -95,7 +95,7 @@ const products = [
 		price: 99.99,
 		description: "Classic tennis shoes with clean minimalist design",
 		category: "casual",
-		image: "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=500",
+		image: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500",
 		rating: { rate: 4.4, count: 130 },
 	},
 	{
@@ -131,7 +131,7 @@ const products = [
 		price: 124.99,
 		description: "Performance basketball shoes with visible Air unit",
 		category: "men's shoes",
-		image: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500",
+		image: "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=500",
 		rating: { rate: 4.4, count: 55 },
 	},
 	{
@@ -176,7 +176,7 @@ const products = [
 		price: 84.99,
 		description: "Classic tennis shoes with durability and style",
 		category: "men's shoes",
-		image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500",
+		image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500",
 		rating: { rate: 4.3, count: 45 },
 	},
 	{
@@ -185,7 +185,7 @@ const products = [
 		price: 54.99,
 		description: "Casual slip-on sneakers with cushioned footbed",
 		category: "casual",
-		image: "https://images.unsplash.com/photo-1491553895911-0055uj9662a6?w=500",
+		image: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500",
 		rating: { rate: 4.2, count: 70 },
 	},
 	{
@@ -194,7 +194,7 @@ const products = [
 		price: 144.99,
 		description: "Trail running shoes with aggressive grip and protection",
 		category: "athletic",
-		image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500",
+		image: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=500",
 		rating: { rate: 4.8, count: 60 },
 	},
 ];

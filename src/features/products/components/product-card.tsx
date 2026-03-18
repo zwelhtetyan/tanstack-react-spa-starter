@@ -14,7 +14,7 @@ export function ProductCard({ product }: ProductCardProps) {
 				<div className="flex aspect-square items-center justify-center">
 					<img
 						alt={product.title}
-						className="max-h-full w-full object-contain"
+						className="size-full object-cover"
 						height={200}
 						src={product.image}
 						width={200}
