@@ -1,6 +1,11 @@
 import type { QueryClient } from "@tanstack/react-query";
-import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
+import {
+	createRootRouteWithContext,
+	HeadContent,
+	Outlet,
+} from "@tanstack/react-router";
 import { Toaster } from "sonner";
+import { appConfig } from "@/config/app-config";
 import { DevTools } from "@/devtools";
 import type { User } from "@/features/auth/types";
 
@@ -13,11 +18,26 @@ type RouterContext = {
 
 export const Route = createRootRouteWithContext<RouterContext>()({
 	component: RootComponent,
+	head: () => ({
+		meta: [
+			{ title: appConfig.title },
+			{
+				name: "title",
+				content: appConfig.title,
+			},
+			{
+				name: "description",
+				content: appConfig.description,
+			},
+		],
+	}),
 });
 
 function RootComponent() {
 	return (
 		<>
+			<HeadContent />
+
 			<Outlet />
 
 			<Toaster theme="system" />
