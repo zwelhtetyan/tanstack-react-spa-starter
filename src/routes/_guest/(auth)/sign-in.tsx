@@ -60,7 +60,7 @@ function RouteComponent() {
 		<Suspense fallback={<AppSpinner />}>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
 				<Link to="/">
-					<img alt="logo" height={60} src="/tanstack_logo.png" width={60} />
+					<img alt="logo" height={60} src="/logo.png" width={60} />
 				</Link>
 
 				<Card className="w-full sm:max-w-sm">
