@@ -18,5 +18,11 @@ export const Route = createFileRoute("/_authed")({
 			});
 		}
 	},
-	pendingComponent: () => <AppSpinner type="screen" />,
+	pendingComponent: () => (
+		<>
+			<title>Verifying...</title>
+			<AppSpinner type="screen" />
+		</>
+	),
+	pendingMs: 0,
 });

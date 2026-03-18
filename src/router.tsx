@@ -5,7 +5,8 @@ import { routeTree } from "./routeTree.gen";
 export const router = createRouter({
 	routeTree,
 
-	context: { queryClient },
+	// biome-ignore lint/style/noNonNullAssertion: <auth will be passed via main app>
+	context: { queryClient, auth: undefined! },
 
 	defaultPreload: "intent",
 	scrollRestoration: true,

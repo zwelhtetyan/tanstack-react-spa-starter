@@ -15,8 +15,11 @@ import {
 import { FieldGroup } from "@/components/ui/field";
 import { SignUpFields } from "@/features/auth/components/fields/sign-up-fields";
 import { useSignupForm } from "@/features/auth/hooks/use-sign-up-form";
+import { createDocumentTitle } from "@/utils/meta";
 
+const title = createDocumentTitle({ title: "Signup" });
 export const Route = createFileRoute("/_guest/(auth)/sign-up")({
+	head: () => ({ meta: [{ title }] }),
 	component: RouteComponent,
 	validateSearch: z.object({
 		redirect: z.string().optional(),
