@@ -19,5 +19,4 @@ export const Route = createFileRoute("/_authed")({
 		}
 	},
 	pendingComponent: () => <AppSpinner type="screen" />,
-	pendingMs: 0,
 });

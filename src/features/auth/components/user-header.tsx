@@ -1,7 +1,7 @@
 import { useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { useAuthActions } from "@/contexts/auth-context";
 import type { User } from "@/features/auth/types";
-import { useAuthActions } from "@/store/auth-store";
 import { useSignOut } from "../hooks/use-sign-out";
 
 type UserHeaderProps = {

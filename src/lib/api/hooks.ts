@@ -4,12 +4,12 @@ import type {
 	BeforeRequestHook,
 	BeforeRetryHook,
 } from "ky";
-import { useAuthStore } from "@/store/auth-store";
+import { authStore } from "@/store/auth-store";
 
 export const beforeRequestHooks: BeforeRequestHook[] = [
 	(request, options) => {
 		const { token: contextToken } = options.context;
-		const storeToken = useAuthStore.getState().token;
+		const storeToken = authStore.getState().token;
 		const token = contextToken ?? storeToken;
 
 		if (!token) return;
@@ -43,7 +43,7 @@ export const beforeErrorHooks: BeforeErrorHook[] = [
 export const AfterResponseHooks: AfterResponseHook[] = [
 	(_request, _options, response, _state) => {
 		if (response.status === 401) {
-			useAuthStore.getState().actions.reset();
+			authStore.getState().actions.reset();
 		}
 
 		// ========== Refresh Token ===========

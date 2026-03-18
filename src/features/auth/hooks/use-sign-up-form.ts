@@ -1,7 +1,7 @@
 import { getRouteApi, useLocation } from "@tanstack/react-router";
 import { type SubmitEvent, useId } from "react";
+import { useAuthActions } from "@/contexts/auth-context";
 import { useAppForm } from "@/lib/form";
-import { useAuthActions } from "@/store/auth-store";
 import { signupFormOpts } from "../lib/form-options";
 import { useSignUp } from "./use-sign-up";
 

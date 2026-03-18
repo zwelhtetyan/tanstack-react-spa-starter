@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { createStore } from "zustand";
 import { ACCESS_TOKEN_NAME } from "@/constants";
 import type { User } from "@/features/auth/types";
 
@@ -14,7 +14,7 @@ type AuthActions = {
 };
 type AuthStore = AuthState & { actions: AuthActions };
 
-export const useAuthStore = create<AuthStore>()((set) => {
+export const authStore = createStore<AuthStore>()((set) => {
 	const token = localStorage.getItem(ACCESS_TOKEN_NAME);
 
 	return {
@@ -41,15 +41,3 @@ export const useAuthStore = create<AuthStore>()((set) => {
 		},
 	};
 });
-
-export const useAuthedUser = () => {
-	return useAuthStore((s) => s.user);
-};
-
-export const useAuthToken = () => {
-	return useAuthStore((s) => s.token);
-};
-
-export const useAuthActions = () => {
-	return useAuthStore((s) => s.actions);
-};
