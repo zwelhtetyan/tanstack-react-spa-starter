@@ -89,5 +89,5 @@ src/
 
 ---
 
-Built with ❤️🏝️ to save you from writing the same boilerplate again.
+Built with ❤️ & 🏝️ to save you from writing the same boilerplate again.
 Start your next project today.
