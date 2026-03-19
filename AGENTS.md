@@ -74,17 +74,10 @@ src/
 │   │   └── form/     # Common form components
 │   │       ├── subscribe-button.tsx
 │   │       └── text-field.tsx
-│   ├── layout/       # Layout components (reserved)
+│   ├── layout/       # Layout components
 │   └── ui/           # shadcn/ui components
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── field.tsx
-│       ├── input.tsx
-│       ├── label.tsx
-│       ├── separator.tsx
-│       └── spinner.tsx
 ├── config/
-│   └── app-config.ts # App title/description configuration
+│   └── app-config.ts 
 ├── constants/
 │   └── index.ts      # App constants (ACCESS_TOKEN_NAME, etc.)
 ├── contexts/         # React contexts
@@ -107,7 +100,7 @@ src/
 │       ├── components/    # Product components
 │       ├── services/      # Product API services & query options
 │       └── types/         # Product types
-├── hooks/            # Custom React hooks (reserved)
+├── hooks/            # Custom React hooks
 ├── lib/
 │   ├── api/          # API client
 │   │   ├── hooks.ts  # KY request/response hooks
@@ -128,8 +121,8 @@ src/
 │   ├── form.ts
 │   └── index.ts      # EntityWithID, TypeID, Brand types
 ├── utils/            # Utility functions
-│   ├── index.ts      # sanitizePayload, toFormData, sleep, mockResponse
-│   └── meta.ts       # Document title utilities
+│   ├── index.ts      # Common utilities
+│   └── meta.ts       # Document meta utilities
 ├── devtools.tsx      # TanStack DevTools setup
 ├── env.ts            # Environment variable validation (Zod)
 ├── main.tsx          # App entry point
@@ -259,12 +252,17 @@ Uses **TanStack Form** with custom setup:
 
 ---
 
+## App notification
+
+- Sonner for toast notifications
+
+---
+
 ## Error Handling
 
 - Use Zod for runtime validation (see `src/env.ts`)
 - Use error boundaries for component errors
 - Use TanStack Router's `defaultErrorComponent` for route errors
-- Sonner for toast notifications
 
 ---
 
