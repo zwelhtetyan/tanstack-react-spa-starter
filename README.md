@@ -2,7 +2,8 @@
 
 The modern way to build React SPAs.
 
-![Preview](public/og.png)
+![Preview](https://tanstack-react-spa-starter.vercel.app/og.webp)
+
 
 ## Quick Start
 
