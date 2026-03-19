@@ -4,12 +4,13 @@ import {
 	HeadContent,
 	Outlet,
 } from "@tanstack/react-router";
-import { Toaster } from "sonner";
+
 import { appConfig } from "@/config/app-config";
 import { DevTools } from "@/devtools";
 import type { User } from "@/features/auth/types";
 
 import "../styles.css";
+import { Toaster } from "@/components/ui/sonner";
 
 type RouterContext = {
 	queryClient: QueryClient;
@@ -40,7 +41,7 @@ function RootComponent() {
 
 			<Outlet />
 
-			<Toaster theme="system" />
+			<Toaster />
 
 			{import.meta.env.DEV && <DevTools />}
 		</>

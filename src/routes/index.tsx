@@ -44,7 +44,7 @@ function App() {
 					</p>
 
 					<div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-muted-foreground text-sm">
-						<span className="text-foreground">⚡ Built with</span>
+						<span className="font-medium text-foreground">⚡ Built with</span>
 						<span className="opacity-50">|</span>
 						{BUILT_WITH.map((stack) => (
 							<a
@@ -64,7 +64,7 @@ function App() {
 							className="flex-1 justify-self-center"
 							onClick={() =>
 								toast.message("Hey 👋", {
-									description: "Welcome to Tanstack SPA Starter",
+									description: "Welcome to Tanstack + React SPA Starter",
 									position: "top-center",
 								})
 							}

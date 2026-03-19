@@ -32,8 +32,14 @@ function RouteComponent() {
 	return (
 		<Suspense fallback={<AppSpinner />}>
 			<div className="flex w-full flex-col items-center justify-center gap-4">
-				<Link className="rounded-full bg-foreground p-0.5" to="/">
-					<img alt="logo" height={50} src="/logo.png" width={50} />
+				<Link className="group" to="/">
+					<img
+						alt="logo"
+						className="transition-all group-hover:grayscale-25"
+						height={50}
+						src="/logo.png"
+						width={50}
+					/>
 				</Link>
 
 				<Card className="w-full sm:max-w-sm">
