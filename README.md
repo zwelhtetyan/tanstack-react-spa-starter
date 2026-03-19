@@ -84,9 +84,9 @@ src/
 - Sonner
 - Zod
 
-> Find commented code in `src/features/auth/hooks/use-sign-in-form` and `src/features/auth/hooks/use-sign-in-form` to enable real auth API requests to mock server.
+> Find commented code in `src/features/auth/hooks/use-sign-in-form` and `src/features/auth/hooks/use-sign-up-form` to enable real auth API requests to mock server.
 
 ---
 
-_Built with ❤️🏝️ to save you from writing the same boilerplate again.
-Start your next project today._
+Built with ❤️🏝️ to save you from writing the same boilerplate again.
+Start your next project today.
