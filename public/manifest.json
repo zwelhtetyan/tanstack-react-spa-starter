@@ -1,6 +1,6 @@
 {
-  "short_name": "TanStack SPA Starter",
-  "name": "Tanstack SPA Starter Template",
+  "short_name": "TanStack SPA",
+  "name": "TanStack + React SPA Starter Template",
   "icons": [
     {
       "src": "favicon.ico",

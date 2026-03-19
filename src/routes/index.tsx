@@ -27,18 +27,18 @@ function App() {
 		<main>
 			<div className="flex min-h-svh items-center justify-center p-6">
 				<div className="flex min-w-0 max-w-sm flex-col leading-loose">
-					<h1 className="mb-0.5 font-medium">🏝️ Tanstack SPA Starter</h1>
+					<h1 className="mb-0.5 font-medium">🏝️ Tanstack React SPA Starter</h1>
 					<p className="text-muted-foreground text-sm">
 						Minimal{" "}
-						<a className="hover:underline" href="https://react.dev">
-							React
-						</a>{" "}
-						+{" "}
 						<a
 							className="hover:underline"
 							href="https://tanstack.com/router/latest"
 						>
 							TanStack
+						</a>{" "}
+						+{" "}
+						<a className="hover:underline" href="https://react.dev">
+							React
 						</a>{" "}
 						SPA boilerplate to kickstart your next project.
 					</p>
