@@ -27,7 +27,7 @@ function App() {
 		<main>
 			<div className="flex min-h-svh items-center justify-center p-6">
 				<div className="flex min-w-0 max-w-sm flex-col leading-loose">
-					<header className="mb-1 flex items-center justify-between">
+					<header className="mb-1 flex flex-wrap items-center justify-between gap-2">
 						<h1 className="font-medium">🏝️ Tanstack React SPA Starter</h1>
 						<Button
 							nativeButton={false}
