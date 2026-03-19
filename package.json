@@ -1,9 +1,9 @@
 {
-  "name": "t-router-only",
+  "name": "tanstack-react-spa-starter",
   "private": true,
   "type": "module",
   "imports": {
-    "#/*": "./src/*"
+    "@/*": "./src/*"
   },
   "scripts": {
     "dev": "vite dev --port 3000",
