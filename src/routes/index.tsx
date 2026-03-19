@@ -16,10 +16,10 @@ const BUILT_WITH = [
 	{ name: "Zod", url: "https://zod.dev" },
 	{ name: "Sonner", url: "https://sonner.emilkowal.ski" },
 	{ name: "Tailwind CSS", url: "https://tailwindcss.com" },
-	{ name: "Shadcn/ui", url: "https://ui.shadcn.com/" },
-	{ name: "Vite", url: "https://vite.dev/" },
-	{ name: "Vitest", url: "https://vitest.dev" },
-	{ name: "Biome", url: "https://biomejs.dev/" },
+	{ name: "Shadcn UI", url: "https://ui.shadcn.com" },
+	{ name: "Base UI", url: "https://base-ui.com" },
+	{ name: "Vite", url: "https://vite.dev" },
+	{ name: "Biome", url: "https://biomejs.dev" },
 ] as const;
 
 function App() {
