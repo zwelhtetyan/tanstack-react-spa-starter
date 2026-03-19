@@ -12,6 +12,8 @@ bun run mock-server.ts  # Mock backend on port 8000
 bun run dev             # App on port 3000
 ```
 
+> Find commented code in `src/features/auth/hooks/use-sign-in-form` and `src/features/auth/hooks/use-sign-up-form` to enable real auth API requests to mock server.
+
 ## Folder Structure
 
 ```
@@ -83,8 +85,6 @@ src/
 - shadcn/ui
 - Sonner
 - Zod
-
-> Find commented code in `src/features/auth/hooks/use-sign-in-form` and `src/features/auth/hooks/use-sign-up-form` to enable real auth API requests to mock server.
 
 ---
 
