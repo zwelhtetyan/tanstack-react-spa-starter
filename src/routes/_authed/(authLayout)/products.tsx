@@ -16,7 +16,7 @@ export const Route = createFileRoute("/_authed/(authLayout)/products")({
 	pendingComponent: () => (
 		<>
 			<title>{title}</title>
-			<AppSpinner className="text-pink-500" type="full" />
+			<AppSpinner type="full" />
 		</>
 	),
 });
