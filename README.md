@@ -2,7 +2,7 @@
 
 The modern way to build React SPAs.
 
-https://github.com/user-attachments/assets/78d51ec0-18f6-41cc-b686-6578ebf29ce6
+[![Preview](https://tanstack-react-spa-starter.vercel.app/og.webp)](https://github.com/user-attachments/assets/83dfddfb-bf62-41fd-b139-9d1893bf6588)
 
 ## Quick Start
 
