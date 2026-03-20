@@ -69,7 +69,6 @@ src/
 - Route-level data fetching
 - Theme support
 - Document head management
-- OpenGraph images
 - Auth guards
 - Devtools
 - Mock-server for testing
