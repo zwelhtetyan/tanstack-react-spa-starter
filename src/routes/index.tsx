@@ -14,7 +14,6 @@ const BUILT_WITH = [
 	{ name: "Zustand", url: "https://zustand.docs.pmnd.rs" },
 	{ name: "Ky", url: "https://github.com/sindresorhus/ky" },
 	{ name: "Zod", url: "https://zod.dev" },
-	{ name: "Sonner", url: "https://sonner.emilkowal.ski" },
 	{ name: "Tailwind CSS", url: "https://tailwindcss.com" },
 	{ name: "Shadcn UI", url: "https://ui.shadcn.com" },
 	{ name: "Base UI", url: "https://base-ui.com" },
