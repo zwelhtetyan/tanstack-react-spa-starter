@@ -81,10 +81,12 @@ src/
 - TanStack Form
 - Zustand
 - Ky
-- Tailwind CSS v4
-- shadcn/ui
-- Sonner
 - Zod
+- Tailwind CSS v4
+- Shadcn/ui
+- Base ui
+- Vite
+- Biome
 
 ---
 
