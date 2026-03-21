@@ -7,7 +7,11 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [
-		devtools(),
+		devtools({
+			enhancedLogs: { enabled: false },
+			consolePiping: { enabled: false },
+			injectSource: { enabled: false },
+		}),
 		tailwindcss(),
 		tanstackRouter({ target: "react", autoCodeSplitting: true }),
 		viteReact(),
